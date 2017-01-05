@@ -1,0 +1,36 @@
+package com._163;
+
+import java.util.Scanner;
+
+public class PrimeSum {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int m = in.nextInt();
+		int sum = 0 ;
+		int count = 1;
+		
+		for(int i=3; count<m; ++i)
+		{
+			for(int j=2; j<i; ++j)
+			{
+				if(i%j==0)
+				{
+					break;
+				}
+				if(i-j==1)
+				{
+					++count;
+					sum+=i;
+				}
+			}
+			
+		}
+		
+		System.out.println(sum);
+	
+}
+}
+/*
+ *    Jan 3th
+ */
