@@ -1,0 +1,75 @@
+package com._163;
+
+import java.util.Scanner;
+
+public class IntRead {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int x = in.nextInt();
+		
+		if( x<0 )
+		{
+			System.out.print("fu ");
+			x = 0 - x;
+		}
+		
+		int count = 0;	//不是1，计算多少位数字
+		int t = x;		//临时存放输入值x
+		
+		
+		while( t>=10 )	//算几位数，有几个0,没有=，10 100 1000有bug
+		{	
+			t = t/10 ;
+			++count;
+		}
+			for( int num=0; count>=0; --count ) //从左往右取值,count可以是0
+			{
+				num = ( x / (int)Math.pow(10, count)) %10; 
+				
+						 
+				switch(num)
+				{
+				case 0:
+					System.out.print("ling");
+					break;
+				case 1:
+					System.out.print("yi");
+					break;
+				case 2:
+					System.out.print("er");
+					break;
+				case 3:
+					System.out.print("san");
+					break;
+				case 4:
+					System.out.print("si");
+					break;
+				case 5:
+					System.out.print("wu");
+					break;
+				case 6:
+					System.out.print("liu");
+					break;
+				case 7:
+					System.out.print("qi");
+					break;
+				case 8:
+					System.out.print("ba");
+					break;
+				case 9:
+					System.out.print("jiu");
+					break;
+				} 
+				
+//				if(num<10)
+//				{
+//					System.out.print(" ");
+//				}
+				if( count>0 )
+				{
+					System.out.print(" ");
+				}
+			}	
+		
+	}
+}
